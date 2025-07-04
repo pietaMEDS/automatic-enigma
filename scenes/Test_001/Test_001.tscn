@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://yaqc3fi2qse1"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://6jmljsvgarut" path="res://scenes/Test_001/Terrain_data/new_terrain_3d_material.tres" id="1_huhy8"]
+[ext_resource type="Terrain3DAssets" uid="uid://6seh6y6h10j4" path="res://scenes/Test_001/Terrain_data/new_terrain_3d_assets.tres" id="2_uf0gq"]
+[ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="3_fuwb1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_880m1"]
+sky_top_color = Color(0.512314, 0.716089, 0.920441, 1)
+sky_horizon_color = Color(0.980671, 1.02139, 1.06061, 1)
+ground_bottom_color = Color(0.285629, 0.244727, 0.197254, 1)
+ground_horizon_color = Color(0.980671, 1.02139, 1.06061, 1)
+energy_multiplier = 1.05
+
+[sub_resource type="Sky" id="Sky_ns5i7"]
+sky_material = SubResource("ProceduralSkyMaterial_880m1")
+
+[sub_resource type="Environment" id="Environment_u1hkr"]
+background_mode = 2
+sky = SubResource("Sky_ns5i7")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u1hkr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.99863, -0.0505527, 0.0135456, 0, 0.258819, 0.965926, -0.052336, 0.964602, -0.258464, 0, 0, 0)
+light_energy = 1.55
+shadow_enabled = true
+directional_shadow_max_distance = 189.0
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://scenes/Test_001/Terrain_data"
+material = ExtResource("1_huhy8")
+assets = ExtResource("2_uf0gq")
+label_distance = 317.5
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_fuwb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.137291, 0.453027, -0.0462425)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
