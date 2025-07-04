@@ -1,0 +1,35 @@
+[gd_resource type="Terrain3DMaterial" format=3 uid="uid://ct1hfmt0c4m80"]
+
+[resource]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.411,
+&"contour_color": Color(0.85, 0.85, 0.19, 1),
+&"contour_interval": 1.0,
+&"contour_thickness": 1.0,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.07,
+&"noise_texture": null,
+&"projection_threshold": 0.8,
+&"world_noise_fragment_normals": true,
+&"world_noise_height": 38.7,
+&"world_noise_lod_distance": 7500.0,
+&"world_noise_max_octaves": 4,
+&"world_noise_min_octaves": 2,
+&"world_noise_offset": Vector3(0, 0, 0),
+&"world_noise_region_blend": 0.33,
+&"world_noise_scale": 5.01
+}
+world_background = 2
+show_region_grid = true
+show_contours = true
